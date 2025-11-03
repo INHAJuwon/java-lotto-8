@@ -14,7 +14,7 @@ class LottoCountTest {
         String validMoney = "8000";
         LottoCount lottoCount = new LottoCount(validMoney);
 
-        assertThat(lottoCount.getLottoCount()).isEqualTo(8);
+        assertThat(lottoCount.calculateLottoCount()).isEqualTo(8);
     }
 
     @DisplayName("구입 금액이 숫자가 아닌 경우 예외가 발생한다.")

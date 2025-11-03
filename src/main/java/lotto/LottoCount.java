@@ -2,12 +2,12 @@ package lotto;
 
 public class LottoCount {
     private static final int MODULER=1000;
-    private final int lottoCount;
+    private final int lottoMoney;
 
     public LottoCount(String money) {
         int lottoMoney = checkInt(money);
         checkNegative(lottoMoney);
-        this.lottoCount = check1000(lottoMoney);
+        this.lottoMoney = lottoMoney;
     }
 
     private int checkInt(String money) {
@@ -29,7 +29,7 @@ public class LottoCount {
             throw new IllegalArgumentException("[ERROR] 구입 금액은 0보다 커야 합니다.");
     }
 
-    public int getLottoCount() {
-        return lottoCount;
+    public int calculateLottoCount() {
+        return check1000(lottoMoney);
     }
 }

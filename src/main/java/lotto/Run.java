@@ -20,7 +20,7 @@ public class Run {
     public void run() {
         LottoCount lottoCount = readPurchaseCount();
 
-        Selection purchasedLotto = new Selection(lottoCount.getLottoCount());
+        Selection purchasedLotto = new Selection(lottoCount.calculateLottoCount());
         output.printLotto(purchasedLotto.getSelection());
 
         Lotto winningLotto = readWinningLotto();
@@ -28,7 +28,7 @@ public class Run {
 
         result.calculateWinning(purchasedLotto.getSelection(), winningLotto, bonusNumber.getBonusNumber());
         output.printResults(result.getResult());
-        output.printRevenue(result.calculateRevenue(lottoCount.getLottoCount()));
+        output.printRevenue(result.calculateRevenue(lottoCount.calculateLottoCount()));
     }
 
     private LottoCount readPurchaseCount() {
