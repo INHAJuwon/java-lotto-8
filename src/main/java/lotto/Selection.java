@@ -14,15 +14,17 @@ public class Selection {
 
     private List<Lotto> selectLotto(int count) {
         List<Lotto> lotto = new ArrayList<>();
+
         for (int i = 0; i < count; i++) {
-            lotto.add(generateRandom());
+            List<Integer> printingLotto = generateRandom();
+            lotto.add(new Lotto(printingLotto));
+            Output.printLotto(printingLotto);
         }
         return lotto;
     }
 
-    private Lotto generateRandom() {
-        List<Integer> lotto = Randoms.pickUniqueNumbersInRange(1, 45, 6);
-        return new Lotto(lotto);
+    private List<Integer> generateRandom() {
+        return Randoms.pickUniqueNumbersInRange(1, 45, 6);
     }
 
     public List<Lotto> getSelection() {

@@ -7,13 +7,11 @@ public class Run {
     private static final int MIN_NUMBER = 1;
     private final Splitter splitter;
     private final Input input;
-    private final Output output;
     private final Result result;
 
     public Run() {
         splitter = new Splitter();
         input = new Input(splitter);
-        output = new Output();
         result = new Result();
     }
 
@@ -21,7 +19,6 @@ public class Run {
         LottoCount lottoCount = readPurchaseCount();
 
         Selection purchasedLotto = new Selection(lottoCount.calculateLottoCount());
-        output.printLotto(purchasedLotto.getSelection());
 
         Lotto winningLotto = readWinningLotto();
         Bonus bonusNumber = readBonusNumber(winningLotto);
