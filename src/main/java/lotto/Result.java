@@ -22,10 +22,7 @@ public class Result {
 
             result.replace(correct, correctCount, correctCount + 1);
         }
-    }
-
-    public Map<LottoEnum, Integer> getResult() {
-        return result;
+        Output.printResults(result);
     }
 
     private void initializeMap() {

@@ -21,7 +21,7 @@ public class Output {
         System.out.println('[' + printer.toString() + ']');
     }
 
-    public void printResults(Map<LottoEnum, Integer> winningResult) {
+    public static void printResults(Map<LottoEnum, Integer> winningResult) {
         System.out.println("\n당첨 통계\n---");
 
         for (LottoEnum rank : LottoEnum.values()) {
@@ -36,7 +36,7 @@ public class Output {
 
     }
 
-    public void printRevenue(double revenue) {
+    public static void printRevenue(double revenue) {
         System.out.printf("총 수익률은 %.1f%%입니다.\n", revenue);
     }
 }

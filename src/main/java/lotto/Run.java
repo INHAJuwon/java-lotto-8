@@ -5,27 +5,22 @@ import java.util.List;
 public class Run {
     private static final int MAX_NUMBER = 45;
     private static final int MIN_NUMBER = 1;
-    private final Splitter splitter;
     private final Input input;
     private final Result result;
 
     public Run() {
-        splitter = new Splitter();
-        input = new Input(splitter);
+        input = new Input();
         result = new Result();
     }
 
     public void run() {
         LottoCount lottoCount = readPurchaseCount();
-
         Selection purchasedLotto = new Selection(lottoCount.calculateLottoCount());
-
         Lotto winningLotto = readWinningLotto();
         Bonus bonusNumber = readBonusNumber(winningLotto);
 
         result.calculateWinning(purchasedLotto.getSelection(), winningLotto, bonusNumber.getBonusNumber());
-        output.printResults(result.getResult());
-        output.printRevenue(result.calculateRevenue(lottoCount.calculateLottoCount()));
+        Output.printRevenue(result.calculateRevenue(lottoCount.calculateLottoCount()));
     }
 
     private LottoCount readPurchaseCount() {

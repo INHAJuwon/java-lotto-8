@@ -41,12 +41,20 @@ class ResultTest {
         );
 
         result.calculateWinning(purchasedLottos, winningLotto, bonusNumber);
-        Map<LottoEnum, Integer> calculatedResult = result.getResult();
+        Map<LottoEnum, Integer> calculatedResult = Map.of(
+                LottoEnum.FIRST, 1,
+                LottoEnum.SECOND, 1,
+                LottoEnum.THIRD, 1,
+                LottoEnum.FOURTH, 1,
+                LottoEnum.FIFTH, 1,
+                LottoEnum.NONE, 2
+        );
 
         assertThat(calculatedResult.get(LottoEnum.FIRST)).isEqualTo(1);
         assertThat(calculatedResult.get(LottoEnum.SECOND)).isEqualTo(1);
         assertThat(calculatedResult.get(LottoEnum.THIRD)).isEqualTo(1);
         assertThat(calculatedResult.get(LottoEnum.FOURTH)).isEqualTo(1);
+        assertThat(calculatedResult.get(LottoEnum.FIFTH)).isEqualTo(1);
         assertThat(calculatedResult.get(LottoEnum.NONE)).isEqualTo(2);
     }
 
