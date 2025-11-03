@@ -14,11 +14,12 @@ public class Selection {
 
     private List<Lotto> selectLotto(int count) {
         List<Lotto> lotto = new ArrayList<>();
+        Output.printLotto(count);
 
         for (int i = 0; i < count; i++) {
             List<Integer> printingLotto = generateRandom();
             lotto.add(new Lotto(printingLotto));
-            Output.printLotto(printingLotto);
+            Output.printList(printingLotto);
         }
         return lotto;
     }

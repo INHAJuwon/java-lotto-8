@@ -27,7 +27,8 @@ class LottoCountTest {
     @DisplayName("구입 금액이 1000원 단위가 아닐 경우 예외가 발생한다.")
     @Test
     void 천원_단위_아닐_경우_예외가_발생한다() {
-        assertThatThrownBy(() -> new LottoCount("1200"))
+        LottoCount lottoCount = new LottoCount("1200");
+        assertThatThrownBy(lottoCount::calculateLottoCount)
                 .isInstanceOf(IllegalArgumentException.class);
     }
 

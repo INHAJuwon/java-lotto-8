@@ -4,13 +4,11 @@ import java.util.List;
 import java.util.Map;
 
 public class Output {
-    public static void printLotto(List<Integer> lottoList) {
-        System.out.println("\n" + lottoList.size() + "개를 구매했습니다.");
-
-        printList(lottoList);
+    public static void printLotto(int count) {
+        System.out.println("\n" + count + "개를 구매했습니다.");
     }
 
-    private static void printList(List<Integer> list) {
+    static void printList(List<Integer> list) {
         StringBuilder printer = new StringBuilder();
         for (int num = 0; num < list.size(); num++) {
             if (num > 0) {

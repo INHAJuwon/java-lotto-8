@@ -8,9 +8,10 @@ public class Lotto {
     public Lotto(List<Integer> numbers) {
         validate(numbers);
         checkDuplication(numbers);
-        Collections.sort(numbers);
         checkRange(numbers);
-        this.numbers = numbers;
+        List<Integer> sortNumbers=new ArrayList<>(numbers);
+        Collections.sort(sortNumbers);
+        this.numbers = sortNumbers;
     }
 
     private void validate(List<Integer> numbers) {
